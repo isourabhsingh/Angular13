@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+  integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+<a type="button" href="/AddUsers" class="btn btn-primary" style="float: right;margin-bottom: 18px;">Add New + </a>
+  
+<table style="margin-top: 20px;">
+  <tr>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let post of data"> 
+    <td><img src="https://robohash.org/laboriosamnobiset.png?size=300x300&set=set1" style="width: 50px;height: 50px;" /></td>
+    <td>{{post.user_name}}</td>
+    <td>{{post.user_email}}</td>
+    <td>{{post.user_address}}</td>
+    <td>{{post.user_gender}}</td>
+    <td>
+      <a type="button" href='/AddUsers?ID={{post.user_id}}' class="btn btn-primary">Edit </a>
+      &nbsp; &nbsp;
+      <button type="button" class="btn btn-danger" (click)='DeleteUserData(post.user_id)'>Delete</button>
+    </td>
+  </tr>
+
+</table>
+
